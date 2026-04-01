@@ -1,0 +1,10 @@
+node_modules/
+*.db
+*.db-journal
+dist/
+.vite/
+.env
+.DS_Store
+*.log
+npm-debug.log*
+uploads/
