@@ -33,7 +33,7 @@ axios.interceptors.response.use(
 
 export const login = async (username, password, role = 'customer') => {
   try {
-    const response = await axios.post('/auth/login', { username, password, role });
+    const response = await axios.post('/auth/login', { email: username, password });
     const { token, user } = response.data;
     
     localStorage.setItem('token', token);
@@ -51,7 +51,7 @@ export const login = async (username, password, role = 'customer') => {
 
 export const register = async (username, password, name, role = 'customer') => {
   try {
-    const response = await axios.post('/auth/register', { username, password, name, role });
+    const response = await axios.post('/auth/register', { email: username, password, name });
     const { token, user } = response.data;
     
     localStorage.setItem('token', token);
